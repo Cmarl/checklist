@@ -1,0 +1,24 @@
+h2 {{name | uppercase}}
+.row
+  .col-xs-4.col-xs-offset-4
+    h2 Tasks
+    form
+      .form-group
+        label(for='task-name') Task Name
+        input#task-name.form-control(type='text', autofocus=true ng-model='task.title')
+.row
+  .col-xs-2.col-xs-offset-4
+    .form-group
+      label(for="due-date") Date Due
+      input#due-date.form-control(type='date' ng-model='task.duedate')
+  .col-xs-2
+    .form-group
+      label(for='priority') Priority
+      select#priority.form-control(ng-model='task.priority')
+        option High
+        option Medium
+        option Low
+.row
+  .col-xs-4.col-xs-offset-4
+    .form-group
+      button.btn.btn-success.form-control(ng-click="addTask(task)") Add Task
